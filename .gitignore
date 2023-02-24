@@ -2,6 +2,7 @@
 /node_modules
 /public/build
 /public/hot
+/public/images/pets
 /public/storage
 /storage/*.key
 /vendor
