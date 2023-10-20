@@ -1,32 +1,29 @@
 
 @include('components.boiler-plate')
 
-        
-            <h1>Owner Directory</h1> 
-                
+                        <h1>Owners Directory</h1>
+                <a href="/">Home</a>
 
-                <ul>
-                    @foreach ($owners as $owner) 
-                    <li>
-                        {{-- <a href="{{ route('owners.details', ['owner_id' => $owner->id]) }}"> </a> --}}
-                            <h2>Owner: {{$owner->first_name }} {{$owner->surname}}</h2>
-                    <br> 
-                    </li>
+                <table>
+                    <tr>
+                        <th>Owner's Name</th>
+                        <th>Animals</th>
+                    </tr>
 
+                    @foreach ($owners as $owner)  
+                    <tr>   
+                            <td>Owner: {{$owner->first_name }} {{$owner->surname}}</td>
                     @foreach ($owner->animal as $animal)
+                    
+                            <td><a href="{{ route('animals.details', ['animal_id' => $animal->id]) }}"> <p>{{ $animal->name }}</p></a></td>
 
-                   <li> <a href="{{ route('animals.details', ['animal_id' => $animal->id]) }}"> <h2>{{ $animal->name }}</h2></a></li>
-                        
-                    @endforeach
-                    <br>
-                    <br>
+                     </tr>
                     @endforeach 
+                     @endforeach 
+                </table>
 
-                
-
-                </ul>
-
-                {{ $owners->links() }}
+               {{ $owners->links() }}
+           
 
         </body>
 
