@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -125,5 +125,44 @@ class AnimalController extends Controller
             'weight' => 'required|numeric',
 
         ]);
+    }
+
+
+    public function search()
+    {
+        $search_term = $_GET['search'] ?? null;
+
+        if ($search_term) {
+            $results = DB::select("
+                SELECT *
+                FROM `animals`
+                WHERE `name` LIKE ?
+                ORDER BY `name` ASC
+            ", [
+                '%' . $search_term . '%'
+            ]);
+        }
+
+        return view('animals.search', [
+            'search_term' => $search_term,
+            'results' => $results ?? []
+        ]);
+    }
+
+    // *********************************************DETAILS FUCNTION*****************************************************************
+
+    public function details($animal_id)
+    {
+        $animal = Animal::findOrFail($animal_id);
+
+        // dd($animal);
+
+        return view(
+            'animals.details',
+            compact(
+                'animal'
+            )
+
+        );
     }
 }
