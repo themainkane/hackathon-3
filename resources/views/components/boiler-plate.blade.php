@@ -9,12 +9,10 @@
 </head>
 <body>
     <nav>
-        <div class="nav__item"><a href="{{route('####')}}">Link 1</a></div>
+        {{-- <div class="nav__item"><a href="{{route('####')}}">Link 1</a></div>
         <div class="nav__item"><a href="{{route('####')}}">2</a></div>
         <div class="nav__item"><a href="{{route('####')}}">3</a></div>
-        <div class="nav__item"><a href="{{route('####')}}">4</a></div>
+        <div class="nav__item"><a href="{{route('####')}}">4</a></div> --}}
     </nav>
-    @include('messages')
+    @include('components.messages')
     
-</body>
-</html>
