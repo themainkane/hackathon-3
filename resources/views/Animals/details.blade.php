@@ -26,7 +26,16 @@
         <p>Age: {{$animal->age}}    Weight {{$animal->weight}}</p>
       </div>
     
-    <h2>Cast and crew</h2>
+    <h2>Owner details</h2>
+        <h4> Name: VARIABLE</h4>
+        <br>
+        <h4>Type: VARIABLE</h4>
+        <br>
+        <h4>Breed:VARIABLE</h4>
+        <br>
+        <p>Age: VARIABLE    Weight VARIABLE</p>
+
+
 
 </body>
 

@@ -25,4 +25,4 @@ Route::get('/search', [AnimalController::class, 'search'])->name('movies.search'
 // Route::get('/movies', [MovieController::class, 'topRated'])->name('movie.top-rated-movies');
 
 // ************DETAILS ROUTE***********************
-Route::get('/animals/{animal_id}', [AnimalController::class, 'details'])->whereNumber('animal_id')->name('animals.details');
+Route::get('/animals/{animal_id}', [AnimalController::class, 'details'])->name('animals.details');

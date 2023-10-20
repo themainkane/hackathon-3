@@ -101,6 +101,8 @@ class AnimalController extends Controller
     {
         $animal = Animal::findOrFail($animal_id);
 
+        // dd($animal);
+
         return view(
             'animals.details',
             compact(
