@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
 
+Route::get('/search', [AnimalController::class, 'search'])->name('movies.search');
+
 // Route::get('/movies', [MovieController::class, 'topRated'])->name('movie.top-rated-movies');
 
 // ************DETAILS ROUTE***********************
