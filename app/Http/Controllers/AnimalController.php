@@ -30,7 +30,11 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        $animal = new Animal();
+
+        return view('animals/CRUD/form', compact( // we return using view path to the file where we will see out form, and in compact what we will see in this case 'movie'
+            'animal'
+        ));
     }
 
     /**
@@ -38,7 +42,22 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validateAnimal($request);
+
+
+        $animal = new Animal();
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+
+        $animal->save();
+
+        session()->flash('success_message', 'The animal was successfully saved ');
+
+        return redirect()->route('animals.edit', $animal->id); // we have id because we called save  $movie->save();
     }
 
     /**
@@ -54,7 +73,9 @@ class AnimalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+
+        return view('animals/CRUD/form', compact('animal'));
     }
 
     /**
@@ -62,7 +83,21 @@ class AnimalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+
+        $this->validateAnimal($request);
+
+        $animal = Animal::findOrFail($id);
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+        $animal->update();
+
+        session()->flash('success_message', 'The animal was successfully updated ');
+
+        return redirect()->route('animals.edit', $animal->id);
     }
 
     /**
@@ -70,7 +105,26 @@ class AnimalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
+
+        return (redirect('/'));
+    }
+
+
+
+    private function validateAnimal(Request $request)
+
+    {
+        $this->validate($request, [
+
+            'name' => 'required',
+            'species' => 'required',
+            'age' => 'required|numeric',
+            'breed' => 'required',
+            'weight' => 'required|numeric',
+
+        ]);
     }
 
 

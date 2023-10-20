@@ -14,6 +14,8 @@
             <li>
                 <?= $animal->name ?>
                 (<?= $animal->breed ?>)
+                <img src="/images/pets/bingo.jpg" alt="">
+                {{-- {{ $images->path }} --}}
             </li>
         <?php endforeach; ?>
     </ul>
