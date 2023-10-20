@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
 
 // Route::get('/movies', [MovieController::class, 'topRated'])->name('movie.top-rated-movies');
+
+// ************DETAILS ROUTE***********************
+Route::get('/animals/{animal_id}', [AnimalController::class, 'details'])->whereNumber('animal_id')->name('animals.details');

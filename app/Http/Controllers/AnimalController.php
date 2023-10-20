@@ -72,4 +72,19 @@ class AnimalController extends Controller
     {
         //
     }
+
+    // *********************************************DETAILS FUCNTION*****************************************************************
+
+    public function details($animal_id)
+    {
+        $animal = Animal::findOrFail($animal_id);
+
+        return view(
+            'animals.details',
+            compact(
+                'animal'
+            )
+
+        );
+    }
 }
