@@ -5,7 +5,7 @@
 <div>
     {{-- <h4><a href="{{ route('animals.edit', $animal->id)}}">Edit Details </a></h4> --}}
 
-    {{-- <form action="{{route('movies.destroy', $movie->id)}}" method="post">
+    {{-- <form action="{{route('animals.destroy', $animal->id)}}" method="post">
     @method('DELETE');
     @csrf
     <button>Delete</button>
