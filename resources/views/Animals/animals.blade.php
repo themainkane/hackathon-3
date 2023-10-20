@@ -5,7 +5,7 @@
 
         
             <h1>Pet Directory</h1> <ul> 
-        
+                <a href="/">Home</a>
                 <ul>
                     @foreach ($animals as $animal) 
                     <li>
