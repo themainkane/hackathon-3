@@ -21,3 +21,16 @@ Route::get('/', function () {
 Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
 
 // Route::get('/movies', [MovieController::class, 'topRated'])->name('movie.top-rated-movies');
+
+
+
+
+Route::get('/animals/create', [AnimalController::class, 'create'])->name('animals.create'); // we give it a name movies.create
+Route::post('/animals', [AnimalController::class, 'store'])->name('animals.store'); // we give it a name movies.create
+// using post we can just use movies in the url
+
+
+
+Route::get('/animals/{animal}/edit', [AnimalController::class, 'edit'])->whereNumber('animal')->name('animals.edit');
+Route::put('/animals/{animal}', [AnimalController::class, 'update'])->whereNumber('animal')->name('animals.update');
+Route::delete('/animals/{animal}', [AnimalController::class, 'destroy'])->whereNumber('animal')->name('animals.destroy');
