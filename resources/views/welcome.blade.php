@@ -16,5 +16,7 @@
 
 
     <a href="/animals">List of Animals</a>
+    <a href="/animals/create">Create new Animal</a>
+    <a href="/animals/edit">Edit</a>
 </body>
 </html>
