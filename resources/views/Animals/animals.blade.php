@@ -9,8 +9,7 @@
                 <ul>
                     @foreach ($animals as $animal) 
                     <li>
-                        {{-- <a href="{{ route('animals.details', ['animal_id' => $animal->id]) }}"> </a>--}}
-                    <h2>{{ $animal->name }}</h2>
+                        <a href="{{ route('animals.details', ['animal_id' => $animal->id]) }}"> <h2>{{ $animal->name }}</h2></a>
                     <br> 
                     Type: {{$animal->species}} 
                     <br>
