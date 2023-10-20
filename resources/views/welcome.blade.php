@@ -15,8 +15,8 @@
     </form>
 
 
-    <a href="/animals">List of Animals</a>
+    <a href="/animals">Animals Directory</a>
     <a href="/animals/create">Create new Animal</a>
-    <a href="/animals/edit">Edit</a>
+    <a href="/owners">Owners Directory</a>
 </body>
 </html>

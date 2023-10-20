@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\OwnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,3 +39,5 @@ Route::put('/animals/{animal}', [AnimalController::class, 'update'])->whereNumbe
 Route::delete('/animals/{animal}', [AnimalController::class, 'destroy'])->whereNumber('animal')->name('animals.destroy');
 // ************DETAILS ROUTE***********************
 Route::get('/animals/{animal_id}', [AnimalController::class, 'details'])->name('animals.details');
+
+Route::get('/owners', [OwnerController::class, 'index'])->name('owners.index');

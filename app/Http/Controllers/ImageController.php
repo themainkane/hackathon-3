@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function animalImage()
-    {
-        return $this->belongsTo(Animal::class);
-    }
+    // public function animalImage()
+    // {
+    //     return $this->belongsTo(Animal::class);
+    // }
 }

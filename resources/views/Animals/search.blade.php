@@ -12,10 +12,11 @@
     <ul>
         <?php foreach ($results as $animal) : ?>
             <li>
-                <?= $animal->name ?>
-                (<?= $animal->breed ?>)
-                <img src="/images/pets/bingo.jpg" alt="">
-                {{-- {{ $images->path }} --}}
+                <a href="{{ route('animals.details', ['animal_id' => $animal->id]) }}"> <h4>{{ $animal->name }}</h4></a>
+                ( {{$animal->breed}})
+    
+
+        
             </li>
         <?php endforeach; ?>
     </ul>

@@ -14,5 +14,6 @@
         <div class="nav__item"><a href="{{route('####')}}">3</a></div>
         <div class="nav__item"><a href="{{route('####')}}">4</a></div> --}}
     </nav>
+    <a href="/">Home</a>
     @include('components.messages')
     
